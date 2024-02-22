@@ -31,7 +31,7 @@
             this.techShopLabel = new System.Windows.Forms.Label();
             this.noOfPhone = new System.Windows.Forms.Button();
             this.noOfLaptop = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.noOfVr = new System.Windows.Forms.Button();
             this.phoneInput = new System.Windows.Forms.TextBox();
             this.laptopInput = new System.Windows.Forms.TextBox();
             this.vrInput = new System.Windows.Forms.TextBox();
@@ -41,15 +41,16 @@
             this.totalLabel = new System.Windows.Forms.Label();
             this.tenderedLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textInput = new System.Windows.Forms.TextBox();
+            this.subTotalOutput = new System.Windows.Forms.Label();
+            this.taxOutput = new System.Windows.Forms.Label();
+            this.totalOutput = new System.Windows.Forms.Label();
+            this.tenderedInput = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.changeLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.changeOutput = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.receiptPrinter = new System.Windows.Forms.Label();
+            this.reOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // techShopLabel
@@ -69,7 +70,7 @@
             this.noOfPhone.BackColor = System.Drawing.Color.DarkBlue;
             this.noOfPhone.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold);
             this.noOfPhone.ForeColor = System.Drawing.Color.Lime;
-            this.noOfPhone.Location = new System.Drawing.Point(12, 89);
+            this.noOfPhone.Location = new System.Drawing.Point(12, 99);
             this.noOfPhone.Name = "noOfPhone";
             this.noOfPhone.Size = new System.Drawing.Size(217, 37);
             this.noOfPhone.TabIndex = 1;
@@ -81,29 +82,29 @@
             this.noOfLaptop.BackColor = System.Drawing.Color.DarkBlue;
             this.noOfLaptop.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold);
             this.noOfLaptop.ForeColor = System.Drawing.Color.Lime;
-            this.noOfLaptop.Location = new System.Drawing.Point(12, 133);
+            this.noOfLaptop.Location = new System.Drawing.Point(12, 143);
             this.noOfLaptop.Name = "noOfLaptop";
             this.noOfLaptop.Size = new System.Drawing.Size(217, 37);
             this.noOfLaptop.TabIndex = 2;
             this.noOfLaptop.Text = "Number of Laptop";
             this.noOfLaptop.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // noOfVr
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkBlue;
-            this.button2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.Lime;
-            this.button2.Location = new System.Drawing.Point(12, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 37);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Number of VR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.noOfVr.BackColor = System.Drawing.Color.DarkBlue;
+            this.noOfVr.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold);
+            this.noOfVr.ForeColor = System.Drawing.Color.Lime;
+            this.noOfVr.Location = new System.Drawing.Point(12, 186);
+            this.noOfVr.Name = "noOfVr";
+            this.noOfVr.Size = new System.Drawing.Size(217, 37);
+            this.noOfVr.TabIndex = 3;
+            this.noOfVr.Text = "Number of VR";
+            this.noOfVr.UseVisualStyleBackColor = false;
             // 
             // phoneInput
             // 
             this.phoneInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.phoneInput.Location = new System.Drawing.Point(251, 97);
+            this.phoneInput.Location = new System.Drawing.Point(251, 107);
             this.phoneInput.Name = "phoneInput";
             this.phoneInput.Size = new System.Drawing.Size(62, 21);
             this.phoneInput.TabIndex = 4;
@@ -111,7 +112,7 @@
             // laptopInput
             // 
             this.laptopInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.laptopInput.Location = new System.Drawing.Point(251, 141);
+            this.laptopInput.Location = new System.Drawing.Point(251, 151);
             this.laptopInput.Name = "laptopInput";
             this.laptopInput.Size = new System.Drawing.Size(62, 21);
             this.laptopInput.TabIndex = 5;
@@ -119,7 +120,7 @@
             // vrInput
             // 
             this.vrInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.vrInput.Location = new System.Drawing.Point(251, 184);
+            this.vrInput.Location = new System.Drawing.Point(251, 194);
             this.vrInput.Name = "vrInput";
             this.vrInput.Size = new System.Drawing.Size(62, 21);
             this.vrInput.TabIndex = 6;
@@ -129,7 +130,7 @@
             this.caculateButton.BackColor = System.Drawing.Color.Black;
             this.caculateButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.caculateButton.ForeColor = System.Drawing.Color.PaleGreen;
-            this.caculateButton.Location = new System.Drawing.Point(119, 238);
+            this.caculateButton.Location = new System.Drawing.Point(119, 248);
             this.caculateButton.Name = "caculateButton";
             this.caculateButton.Size = new System.Drawing.Size(171, 41);
             this.caculateButton.TabIndex = 7;
@@ -190,43 +191,44 @@
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 13;
             // 
-            // label2
+            // subTotalOutput
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(536, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "...";
+            this.subTotalOutput.AutoSize = true;
+            this.subTotalOutput.ForeColor = System.Drawing.Color.White;
+            this.subTotalOutput.Location = new System.Drawing.Point(536, 85);
+            this.subTotalOutput.Name = "subTotalOutput";
+            this.subTotalOutput.Size = new System.Drawing.Size(16, 13);
+            this.subTotalOutput.TabIndex = 14;
+            this.subTotalOutput.Text = "...";
             // 
-            // label1
+            // taxOutput
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(536, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "...";
+            this.taxOutput.AutoSize = true;
+            this.taxOutput.ForeColor = System.Drawing.Color.White;
+            this.taxOutput.Location = new System.Drawing.Point(536, 121);
+            this.taxOutput.Name = "taxOutput";
+            this.taxOutput.Size = new System.Drawing.Size(16, 13);
+            this.taxOutput.TabIndex = 15;
+            this.taxOutput.Text = "...";
             // 
-            // label4
+            // totalOutput
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(536, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(16, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "...";
+            this.totalOutput.AutoSize = true;
+            this.totalOutput.ForeColor = System.Drawing.Color.White;
+            this.totalOutput.Location = new System.Drawing.Point(536, 156);
+            this.totalOutput.Name = "totalOutput";
+            this.totalOutput.Size = new System.Drawing.Size(16, 13);
+            this.totalOutput.TabIndex = 16;
+            this.totalOutput.Text = "...";
             // 
-            // textInput
+            // tenderedInput
             // 
-            this.textInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.textInput.Location = new System.Drawing.Point(522, 195);
-            this.textInput.Name = "textInput";
-            this.textInput.Size = new System.Drawing.Size(62, 21);
-            this.textInput.TabIndex = 17;
+            this.tenderedInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.tenderedInput.Location = new System.Drawing.Point(522, 195);
+            this.tenderedInput.Name = "tenderedInput";
+            this.tenderedInput.Size = new System.Drawing.Size(62, 21);
+            this.tenderedInput.TabIndex = 17;
+            this.tenderedInput.TextChanged += new System.EventHandler(this.tenderedInput_TextChanged);
             // 
             // button1
             // 
@@ -251,15 +253,15 @@
             this.changeLabel.TabIndex = 19;
             this.changeLabel.Text = "Change:";
             // 
-            // label5
+            // changeOutput
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(545, 303);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "...";
+            this.changeOutput.AutoSize = true;
+            this.changeOutput.ForeColor = System.Drawing.Color.White;
+            this.changeOutput.Location = new System.Drawing.Point(545, 303);
+            this.changeOutput.Name = "changeOutput";
+            this.changeOutput.Size = new System.Drawing.Size(16, 13);
+            this.changeOutput.TabIndex = 20;
+            this.changeOutput.Text = "...";
             // 
             // button3
             // 
@@ -276,26 +278,40 @@
             // receiptPrinter
             // 
             this.receiptPrinter.BackColor = System.Drawing.Color.AliceBlue;
-            this.receiptPrinter.Location = new System.Drawing.Point(623, 9);
+            this.receiptPrinter.Location = new System.Drawing.Point(632, 9);
             this.receiptPrinter.Name = "receiptPrinter";
-            this.receiptPrinter.Size = new System.Drawing.Size(296, 429);
+            this.receiptPrinter.Size = new System.Drawing.Size(296, 385);
             this.receiptPrinter.TabIndex = 22;
+            this.receiptPrinter.Click += new System.EventHandler(this.receiptPrinter_Click);
+            // 
+            // reOrder
+            // 
+            this.reOrder.BackColor = System.Drawing.Color.Black;
+            this.reOrder.Font = new System.Drawing.Font("Stencil", 12.75F);
+            this.reOrder.ForeColor = System.Drawing.Color.PaleGreen;
+            this.reOrder.Location = new System.Drawing.Point(673, 397);
+            this.reOrder.Name = "reOrder";
+            this.reOrder.Size = new System.Drawing.Size(229, 41);
+            this.reOrder.TabIndex = 23;
+            this.reOrder.Text = "New Order";
+            this.reOrder.UseVisualStyleBackColor = false;
             // 
             // cashRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
-            this.ClientSize = new System.Drawing.Size(940, 450);
+            this.ClientSize = new System.Drawing.Size(945, 511);
+            this.Controls.Add(this.reOrder);
             this.Controls.Add(this.receiptPrinter);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.changeOutput);
             this.Controls.Add(this.changeLabel);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textInput);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tenderedInput);
+            this.Controls.Add(this.totalOutput);
+            this.Controls.Add(this.taxOutput);
+            this.Controls.Add(this.subTotalOutput);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tenderedLabel);
             this.Controls.Add(this.totalLabel);
@@ -305,7 +321,7 @@
             this.Controls.Add(this.vrInput);
             this.Controls.Add(this.laptopInput);
             this.Controls.Add(this.phoneInput);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.noOfVr);
             this.Controls.Add(this.noOfLaptop);
             this.Controls.Add(this.noOfPhone);
             this.Controls.Add(this.techShopLabel);
@@ -322,7 +338,7 @@
         private System.Windows.Forms.Label techShopLabel;
         private System.Windows.Forms.Button noOfPhone;
         private System.Windows.Forms.Button noOfLaptop;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button noOfVr;
         private System.Windows.Forms.TextBox phoneInput;
         private System.Windows.Forms.TextBox laptopInput;
         private System.Windows.Forms.TextBox vrInput;
@@ -332,15 +348,16 @@
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Label tenderedLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textInput;
+        private System.Windows.Forms.Label subTotalOutput;
+        private System.Windows.Forms.Label taxOutput;
+        private System.Windows.Forms.Label totalOutput;
+        private System.Windows.Forms.TextBox tenderedInput;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label changeLabel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label changeOutput;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label receiptPrinter;
+        private System.Windows.Forms.Button reOrder;
     }
 }
 

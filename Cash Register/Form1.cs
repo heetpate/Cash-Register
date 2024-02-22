@@ -13,8 +13,24 @@ namespace Cash_Register
     public partial class cashRegister : Form
     {
         double phone = 1259.00;
-        double VR = 3200.00;
+        double vr = 3200.00;
         double laptop = 1600.00;
+
+        int phonePrice;
+        int vrPrice;
+        int laptopPrice;
+
+        double subtotal;
+        double taxRate = 0.13;
+        double total;
+        double totalAmount;
+
+        double moneytendered = 0;
+        double tendered;
+        double change;
+        
+        
+        
         public cashRegister()
         {
             InitializeComponent();
@@ -34,27 +50,58 @@ namespace Cash_Register
         {
             try
             {
-                phone = Convert.ToInt32(slicesInput.Text);
+                phonePrice = Convert.ToInt32(phoneInput.Text);
+                vrPrice = Convert.ToInt32(vrInput.Text);
+                laptopPrice = Convert.ToInt32(laptopInput.Text);
+              
+                //subtotal = Convert.ToInt32(subTotalOutput.Text);
+                //tax = Convert.ToInt32(taxOutput.Text);
+                //total = Convert.ToInt32(totalOutput.Text);
+                //tendered = Convert.ToInt32(tenderedInput.Text);
 
-                subtotal = slicesPrice * numOfSlices;
-                double taxAmount = subtotal * taxRate;
-                double totalPrice = subtotal + taxAmount;
 
-                subtotalOutput.Text = $"{subtotal.ToString("C")}";
-                taxOutput.Text = $"${taxAmount.ToString(".00")}";
-                totalPriceOutput.Text = $"${totalPrice.ToString(".00")}";
+                subtotal = (phone * phonePrice) + (vr * vrPrice) + (laptop * laptopPrice);
+                subTotalOutput.Text = $"{subtotal.ToString("C")}";
+
+                totalAmount = (subtotal * taxRate);
+                taxOutput.Text = $"{totalAmount.ToString("C")}";
+
+                total = (subtotal + totalAmount);
+                totalOutput.Text = $"{total.ToString("C")}";
+
+                moneytendered = ();
+
+                change = (total - tendered);
+                changeOutput.Text = $"{change.ToString("C")}";
+
+               
+
+
             }
             catch
             {
-                subtotalOutput.Text = "ERROR";
-                taxOutput.Text = "ERROR";
-                subtotalOutput.Text = "ERROR";
-                totalPriceOutput.Text = "ERROR";
+                subTotalOutput.Text = "Invalid output, try again";
+                taxOutput.Text = "Invalid output, try again";
+                subTotalOutput.Text = "Invalid output, try again";
+                totalOutput.Text = "Invalid output, try again";
 
 
             }
 
         }
+
+        private void tenderedInput_TextChanged(object sender, EventArgs e)
+        {
+            tendered = Convert.ToInt32(tenderedInput.Text);
+        }
+
+        private void receiptPrinter_Click(object sender, EventArgs e)
+        {
+            receiptPrinter.Text += $"\n\n Tech Shop Inc";
+            receiptPrinter.Text += $"\n\n Feb 22, 2024";
+
+
+
         }
     }
 }
