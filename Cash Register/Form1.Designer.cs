@@ -45,10 +45,10 @@
             this.taxOutput = new System.Windows.Forms.Label();
             this.totalOutput = new System.Windows.Forms.Label();
             this.tenderedInput = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.calculateChange = new System.Windows.Forms.Button();
             this.changeLabel = new System.Windows.Forms.Label();
             this.changeOutput = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.printReceiptButton = new System.Windows.Forms.Button();
             this.receiptPrinter = new System.Windows.Forms.Label();
             this.reOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -230,17 +230,18 @@
             this.tenderedInput.TabIndex = 17;
             this.tenderedInput.TextChanged += new System.EventHandler(this.tenderedInput_TextChanged);
             // 
-            // button1
+            // calculateChange
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Stencil", 12.75F);
-            this.button1.ForeColor = System.Drawing.Color.PaleGreen;
-            this.button1.Location = new System.Drawing.Point(366, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(229, 41);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Calculate the Change";
-            this.button1.UseVisualStyleBackColor = false;
+            this.calculateChange.BackColor = System.Drawing.Color.Black;
+            this.calculateChange.Enabled = false;
+            this.calculateChange.Font = new System.Drawing.Font("Stencil", 12.75F);
+            this.calculateChange.ForeColor = System.Drawing.Color.PaleGreen;
+            this.calculateChange.Location = new System.Drawing.Point(366, 240);
+            this.calculateChange.Name = "calculateChange";
+            this.calculateChange.Size = new System.Drawing.Size(229, 41);
+            this.calculateChange.TabIndex = 18;
+            this.calculateChange.Text = "Calculate the Change";
+            this.calculateChange.UseVisualStyleBackColor = false;
             // 
             // changeLabel
             // 
@@ -263,17 +264,19 @@
             this.changeOutput.TabIndex = 20;
             this.changeOutput.Text = "...";
             // 
-            // button3
+            // printReceiptButton
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.Font = new System.Drawing.Font("Stencil", 12.75F);
-            this.button3.ForeColor = System.Drawing.Color.PaleGreen;
-            this.button3.Location = new System.Drawing.Point(366, 333);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(229, 41);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Print the Receipt";
-            this.button3.UseVisualStyleBackColor = false;
+            this.printReceiptButton.BackColor = System.Drawing.Color.Black;
+            this.printReceiptButton.Enabled = false;
+            this.printReceiptButton.Font = new System.Drawing.Font("Stencil", 12.75F);
+            this.printReceiptButton.ForeColor = System.Drawing.Color.PaleGreen;
+            this.printReceiptButton.Location = new System.Drawing.Point(366, 333);
+            this.printReceiptButton.Name = "printReceiptButton";
+            this.printReceiptButton.Size = new System.Drawing.Size(229, 41);
+            this.printReceiptButton.TabIndex = 21;
+            this.printReceiptButton.Text = "Print the Receipt";
+            this.printReceiptButton.UseVisualStyleBackColor = false;
+            this.printReceiptButton.Click += new System.EventHandler(this.printReceiptButton_Click);
             // 
             // receiptPrinter
             // 
@@ -287,6 +290,7 @@
             // reOrder
             // 
             this.reOrder.BackColor = System.Drawing.Color.Black;
+            this.reOrder.Enabled = false;
             this.reOrder.Font = new System.Drawing.Font("Stencil", 12.75F);
             this.reOrder.ForeColor = System.Drawing.Color.PaleGreen;
             this.reOrder.Location = new System.Drawing.Point(673, 397);
@@ -295,6 +299,7 @@
             this.reOrder.TabIndex = 23;
             this.reOrder.Text = "New Order";
             this.reOrder.UseVisualStyleBackColor = false;
+            this.reOrder.Click += new System.EventHandler(this.reOrder_Click);
             // 
             // cashRegister
             // 
@@ -304,10 +309,10 @@
             this.ClientSize = new System.Drawing.Size(945, 511);
             this.Controls.Add(this.reOrder);
             this.Controls.Add(this.receiptPrinter);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.printReceiptButton);
             this.Controls.Add(this.changeOutput);
             this.Controls.Add(this.changeLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.calculateChange);
             this.Controls.Add(this.tenderedInput);
             this.Controls.Add(this.totalOutput);
             this.Controls.Add(this.taxOutput);
@@ -352,10 +357,10 @@
         private System.Windows.Forms.Label taxOutput;
         private System.Windows.Forms.Label totalOutput;
         private System.Windows.Forms.TextBox tenderedInput;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button calculateChange;
         private System.Windows.Forms.Label changeLabel;
         private System.Windows.Forms.Label changeOutput;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button printReceiptButton;
         private System.Windows.Forms.Label receiptPrinter;
         private System.Windows.Forms.Button reOrder;
     }

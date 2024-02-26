@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading; 
 
 namespace Cash_Register
 {
@@ -54,10 +55,10 @@ namespace Cash_Register
                 vrPrice = Convert.ToInt32(vrInput.Text);
                 laptopPrice = Convert.ToInt32(laptopInput.Text);
               
-                //subtotal = Convert.ToInt32(subTotalOutput.Text);
-                //tax = Convert.ToInt32(taxOutput.Text);
-                //total = Convert.ToInt32(totalOutput.Text);
-                //tendered = Convert.ToInt32(tenderedInput.Text);
+               // subtotal = Convert.ToInt32(subTotalOutput.Text);
+                //taxRate = Convert.ToInt32(taxOutput.Text);
+               // total = Convert.ToInt32(totalOutput.Text);
+               // tendered = Convert.ToInt32(tenderedInput.Text);
 
 
                 subtotal = (phone * phonePrice) + (vr * vrPrice) + (laptop * laptopPrice);
@@ -69,12 +70,16 @@ namespace Cash_Register
                 total = (subtotal + totalAmount);
                 totalOutput.Text = $"{total.ToString("C")}";
 
-                moneytendered = ();
+                tendered = Convert.ToInt32(tenderedInput.Text);
+               // tendered = (totalOutput - tenderedInput);
+
 
                 change = (total - tendered);
                 changeOutput.Text = $"{change.ToString("C")}";
 
-               
+                calculateChange.Enabled = true;
+                printReceiptButton.Enabled = true;
+                reOrder.Enabled = true; 
 
 
             }
@@ -92,15 +97,67 @@ namespace Cash_Register
 
         private void tenderedInput_TextChanged(object sender, EventArgs e)
         {
-            tendered = Convert.ToInt32(tenderedInput.Text);
+           
         }
 
         private void receiptPrinter_Click(object sender, EventArgs e)
         {
             receiptPrinter.Text += $"\n\n Tech Shop Inc";
             receiptPrinter.Text += $"\n\n Feb 22, 2024";
+            // receiptPrinter.Text +=$"\n\n "
 
 
+            Thread.Sleep(500);
+            Refresh();
+            receiptPrinter.Text += $"\n\n Sub Total:            {subtotal.ToString("C")}";
+
+            Thread.Sleep(500);
+            Refresh();
+            receiptPrinter.Text += $"\n\n Tax Amount:           {taxRate.ToString("C")}";
+
+            Thread.Sleep(500);
+            Refresh();
+            receiptPrinter.Text += $"\n\n Total:                {total.ToString("C")}";
+
+            Thread.Sleep(500);
+            Refresh();
+            receiptPrinter.Text += $"\n\n Tendered:             {tendered.ToString("C")}";
+
+            Thread.Sleep(500);
+            Refresh();
+            receiptPrinter.Text += $"\n\n Change:               {change.ToString("C")}";
+
+            Thread.Sleep(500);
+            Refresh();
+            receiptPrinter.Text += $"\n\n Have a Nice Day:)";
+
+
+
+        }
+
+        private void reOrder_Click(object sender, EventArgs e)
+        {
+            vrInput.Clear();
+            phoneInput.Clear();
+            laptopInput.Clear();
+
+            subTotalOutput.Text = "";
+            taxOutput.Text = "";
+            totalOutput.Text = "";
+
+            
+            tenderedInput.Clear();
+            changeOutput.Text = "";
+
+            //cashRegister.Text = "";
+
+            calculateChange.Enabled = false; 
+            printReceiptButton.Enabled = false;
+            reOrder.Enabled = false;
+        }
+
+        private void printReceiptButton_Click(object sender, EventArgs e)
+        {
 
         }
     }
