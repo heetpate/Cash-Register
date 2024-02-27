@@ -242,6 +242,7 @@
             this.calculateChange.TabIndex = 18;
             this.calculateChange.Text = "Calculate the Change";
             this.calculateChange.UseVisualStyleBackColor = false;
+            this.calculateChange.Click += new System.EventHandler(this.calculateChange_Click);
             // 
             // changeLabel
             // 
@@ -281,19 +282,19 @@
             // receiptPrinter
             // 
             this.receiptPrinter.BackColor = System.Drawing.Color.AliceBlue;
-            this.receiptPrinter.Location = new System.Drawing.Point(632, 9);
+            this.receiptPrinter.ForeColor = System.Drawing.Color.Black;
+            this.receiptPrinter.Location = new System.Drawing.Point(637, 9);
             this.receiptPrinter.Name = "receiptPrinter";
-            this.receiptPrinter.Size = new System.Drawing.Size(296, 385);
+            this.receiptPrinter.Size = new System.Drawing.Size(296, 431);
             this.receiptPrinter.TabIndex = 22;
             this.receiptPrinter.Click += new System.EventHandler(this.receiptPrinter_Click);
             // 
             // reOrder
             // 
             this.reOrder.BackColor = System.Drawing.Color.Black;
-            this.reOrder.Enabled = false;
             this.reOrder.Font = new System.Drawing.Font("Stencil", 12.75F);
             this.reOrder.ForeColor = System.Drawing.Color.PaleGreen;
-            this.reOrder.Location = new System.Drawing.Point(673, 397);
+            this.reOrder.Location = new System.Drawing.Point(673, 443);
             this.reOrder.Name = "reOrder";
             this.reOrder.Size = new System.Drawing.Size(229, 41);
             this.reOrder.TabIndex = 23;
